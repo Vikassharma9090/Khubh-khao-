@@ -1,122 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Your website's description here" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, Tailwind" />
+    <meta name="author" content="Your Name" />
+    <title>Just like Swiggy</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/framer-motion/7.4.3/framer-motion.min.js"
+      defer
+    ></script>
+    <script src="js/script.js" defer></script>
+  </head>
+  <body class="font-sans bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+      <div
+        class="container mx-auto flex justify-between items-center py-4 px-6"
+      >
+        <!-- Logo -->
+        <a href="#" class="text-xl font-bold text-blue-600">Logo</a>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Just like swiggy website</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" media="screen and (max-width: 1170px)" href="css/phone.css"> 
-</head>
+        <!-- Mobile Menu Button -->
+        <button
+          id="menu-toggle"
+          class="lg:hidden p-2 text-gray-800 focus:outline-none"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
 
-<body>
-	<nav id="navbar">
-		<div id="logo">
-			<img src="images/logo.jpg" alt="swiggy website">
-		</div>
-		<ul>
-			<li class="item"><a href="#home">Home</a></li>
-			<li class="item"><a href="#services-container">Services</a></li>
-			<li class="item"><a href="#Clients_section">Our Clients </a></li>
-			<li class="item"><a href="#contact">Contact us</a></li>
-			<li class="item"><a href="#contact">Feedback </a></li>
-		</ul>
-	</nav>
-	<!-- section start -->
-	<section id="home">
-		<h1 class="h1-primary">Welcome to Just like swiggy site</h1>
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non saepe at, quo veniam quibusdam id odio nulla
-			officiis, tempora libero inventore iure repellendus minus cum accusamus velit blanditiis iusto iure
-			repellendus minus cum accusamus velit blanditiis iusto itaque?</p>
-		<button class="btn"> Order now </button>
-	</section>
-	<!-- Services start -->
-	<section id="services-container">
-		<h1 class="h1-primary centre" style="color: #FFF;
-			background-color: #333;
-			
-			"> Our Services</h1>
-		<div id="services">
-			<div class="box">
-				<img src="images/s3.jpg" alt="">;
-				<h1 class="h-secondary centre">Food Ordering</h1>
-				<p class="centre">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque, minima nisi
-					repudiandae suscipit vero magni velit dolorum est quidem saepe odio impedit? Eius ullam saepe at.
-					Officia vel natus eligendi! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod vitae
-					assumenda veniam nihil, omnis autem, quaerat enim ipsum reprehenderit fugiat at tempore
-					exercitationem.</p>
-			</div>
-			<div class="box">
-				<img src="images/s2.jpg" alt="">;
-				<h1 class="h-secondary centre">Food Ordering</h1>
-				<p class="centre">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque, minima nisi
-					repudiandae suscipit vero magni velit dolorum est quidem saepe odio impedit? Eius ullam saepe at.
-					Officia vel natus eligendi! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod vitae
-					assumenda veniam nihil, omnis autem, quaerat enim ipsum reprehenderit fugiat at tempore
-					exercitationem.</p>
-			</div>
-			<div class="box">
-				<img src="images/s3.jpg" alt="">;
-				<h1 class="h-secondary centre">Food Ordering</h1>
-				<p class="centre">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque, minima nisi
-					repudiandae suscipit vero magni velit dolorum est quidem saepe odio impedit? Eius ullam saepe at.
-					Officia vel natus eligendi! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod vitae
-					assumenda veniam nihil, omnis autem, quaerat enim ipsum reprehenderit fugiat at tempore
-					exercitationem.</p>
-			</div>
-		</div>
-	</section>
-	<!-- Clients_section -->
-	<section id="Clients_section">
-		<h1 class="h1-primary centre">Our Clients</h1>
-		<div id="Clients">
-			<div class="Clients-item">
-				<img src="images/c.png" alt="Clients-item">
-			</div>
-			<div class="Clients-item">
-				<img src="images/c.png" alt="Clients-item">
-			</div>
-			<div class="Clients-item">
-				<img src="images/c.png" alt="Clients-item">
-			</div>
-			<div class="Clients-item">
-				<img src="images/c.png" alt="Clients-item">
-			</div>
-			<div class="Clients-item">
-				<img src="images/c.png" alt="Clients-item">
-			</div>
-		</div>
-	</section>
-	<!-- Contact - section start -->
-	<section id="contact">
-		<h1 class="h1-primary centre"> Our contact</h1>
-		<div id="contact-box">
-			<form action="">
-				<div class="from-group">
-					<label for="name">Name: </label>
-					<input type="text" name="" name="name" id="name" placeholder="Enter  you name">
-				</div>
-				<div class="from-group">
-					<label for="Email">Email: </label>
-					<input type="Email" name="" name="name" id="Email" placeholder="Enter  you Email">
-				</div>
-				<div class="from-group">
-					<label for="Phone">Phone: </label>
-					<input type="Phone" name="" name="name" id="Phone" placeholder="Enter  you Phone">
-				</div>
-				<div class="from-group">
-					<label for="name">Massage: </label>
-					<textarea name="Massage" id="Massage" cols="30" rows="10"></textarea>
-				</div>
-			</form>
-		</div>
-	</section>
+        <!-- Desktop Menu -->
+        <ul
+          id="menu"
+          class="lg:flex hidden space-x-6 text-lg font-medium text-gray-800"
+        >
+          <li><a href="#home" class="hover:text-blue-600">Home</a></li>
+          <li><a href="#about" class="hover:text-blue-600">About</a></li>
+          <li><a href="#services" class="hover:text-blue-600">Services</a></li>
+          <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+        </ul>
+      </div>
 
-	<footer>
-		<div class="centre">
-			Copyright &copy;Www.Swiggysite.com. All Right Resvered!
-		</div>
-	</footer>
-</body>
+      <!-- Mobile Menu (Hidden by default) -->
+      <ul
+        id="mobile-menu"
+        class="lg:hidden hidden absolute left-0 right-0 top-16 bg-white shadow-md text-center py-4"
+      >
+        <li>
+          <a
+            href="#home"
+            class="block py-2 text-lg text-gray-800 hover:text-blue-600"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="#about"
+            class="block py-2 text-lg text-gray-800 hover:text-blue-600"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            href="#services"
+            class="block py-2 text-lg text-gray-800 hover:text-blue-600"
+            >Services</a
+          >
+        </li>
+        <li>
+          <a
+            href="#contact"
+            class="block py-2 text-lg text-gray-800 hover:text-blue-600"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </nav>
 
+    <!-- Main Content Section -->
+    <section
+      id="home"
+      class="text-center bg-cover bg-center h-screen flex flex-col justify-center items-center"
+      style="
+        background-image: url('https://images.unsplash.com/photo-1560684352-8497838a2229?auto=format&fit=crop&w=1512&q=80');
+      "
+    >
+      <h1 class="text-4xl sm:text-6xl text-white font-bold">
+        Welcome to Our Website
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-300 mt-4">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </p>
+      <button
+        class="mt-6 bg-yellow-500 text-black py-2 px-6 rounded-lg shadow-lg hover:bg-yellow-600"
+      >
+        Order Now
+      </button>
+    </section>
+
+    <!-- Eye-catching Section (Promotional Banner) -->
+    <section class="bg-blue-500 text-white py-12 px-6 text-center">
+      <h2 class="text-3xl font-bold mb-4">Exclusive Offer!</h2>
+      <p class="text-lg mb-6">
+        Get 20% off your first order with us. Use code <strong>NEW20</strong> at
+        checkout!
+      </p>
+      <a
+        href="#order-now"
+        class="bg-yellow-500 text-black py-2 px-6 rounded-lg shadow-lg hover:bg-yellow-600"
+      >
+        Claim Your Discount
+      </a>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-100">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-800">
+          Our Services
+        </h2>
+        <p class="text-lg text-gray-600 mt-4">
+          We offer a wide range of high-quality services tailored to your needs.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap justify-center mt-12">
+        <!-- Service 1 -->
+        <div class="w-full sm:w-1/2 lg:w-1/3 p-6">
+          <div class="bg-white p-8 rounded-lg shadow-lg">
+            <img
+              src="https://via.placeholder.com/150"
+              alt="Service 1"
+              class="w-full h-48 object-cover rounded-t-lg"
+            />
+            <h3 class="text-xl font-semibold text-gray-800 mt-4">Service 1</h3>
+            <p class="text-gray-600 mt-2">
+              Description of service 1. Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="w-full sm:w-1/2 lg:w-1/3 p-6">
+          <div class="bg-white p-8 rounded-lg shadow-lg">
+            <img
+              src="https://via.placeholder.com/150"
+              alt="Service 2"
+              class="w-full h-48 object-cover rounded-t-lg"
+            />
+            <h3 class="text-xl font-semibold text-gray-800 mt-4">Service 2</h3>
+            <p class="text-gray-600 mt-2">
+              Description of service 2. Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="w-full sm:w-1/2 lg:w-1/3 p-6">
+          <div class="bg-white p-8 rounded-lg shadow-lg">
+            <img
+              src="https://via.placeholder.com/150"
+              alt="Service 3"
+              class="w-full h-48 object-cover rounded-t-lg"
+            />
+            <h3 class="text-xl font-semibold text-gray-800 mt-4">Service 3</h3>
+            <p class="text-gray-600 mt-2">
+              Description of service 3. Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact-us" class="py-12 px-4 sm:px-8 lg:px-32 bg-gray-100">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-800">Contact Us</h2>
+        <p class="mt-4 text-gray-600 text-sm sm:text-base">
+          We would love to hear from you! Whether you have a question, feedback,
+          or need assistance, reach out to us today.
+        </p>
+      </div>
+
+      <div class="max-w-3xl mx-auto mt-8 bg-white p-8 rounded-lg shadow-lg">
+        <form action="#" method="POST" class="space-y-6">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            class="w-full px-4 py-3 border rounded-md text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            class="w-full px-4 py-3 border rounded-md text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            class="w-full px-4 py-3 border rounded-md text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          ></textarea>
+          <button
+            type="submit"
+            class="w-full bg-blue-500 text-white py-3 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="bg-black text-white text-center py-4">
+      Copyright © 2024 JustLikeSwiggy.com. All Rights Reserved.
+    </footer>
+
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
 </html>
