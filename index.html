@@ -11,6 +11,7 @@
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/framer-motion/7.4.3/framer-motion.min.js"
       defer
@@ -19,221 +20,1238 @@
   </head>
   <body class="font-sans bg-gray-100">
     <!-- Navbar -->
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-      <div
-        class="container mx-auto flex justify-between items-center py-4 px-6"
-      >
-        <!-- Logo -->
-        <a href="#" class="text-xl font-bold text-blue-600">Logo</a>
-
-        <!-- Mobile Menu Button -->
-        <button
-          id="menu-toggle"
-          class="lg:hidden p-2 text-gray-800 focus:outline-none"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            stroke-width="2"
+    <nav class="text-white bg-gray-900 shadow-lg">
+      <div class="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between py-4">
+          <!-- Logo -->
+          <a
+            href="#"
+            class="text-2xl font-bold text-yellow-500 hover:text-yellow-300"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M4 6h16M4 12h16M4 18h16"
-            ></path>
-          </svg>
-        </button>
+            JustLikeSwiggy
+          </a>
 
-        <!-- Desktop Menu -->
-        <ul
-          id="menu"
-          class="lg:flex hidden space-x-6 text-lg font-medium text-gray-800"
-        >
-          <li><a href="#home" class="hover:text-blue-600">Home</a></li>
-          <li><a href="#about" class="hover:text-blue-600">About</a></li>
-          <li><a href="#services" class="hover:text-blue-600">Services</a></li>
-          <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
-        </ul>
+          <!-- Navbar Links (Desktop) -->
+          <div class="hidden space-x-8 md:flex">
+            <a
+              href="#home"
+              class="text-gray-400 transition-colors duration-300 hover:text-yellow-500"
+              >Home</a
+            >
+            <a
+              href="#about"
+              class="text-gray-400 transition-colors duration-300 hover:text-yellow-500"
+              >About Us</a
+            >
+            <a
+              href="#services"
+              class="text-gray-400 transition-colors duration-300 hover:text-yellow-500"
+              >Services</a
+            >
+            <a
+              href="#menu"
+              class="text-gray-400 transition-colors duration-300 hover:text-yellow-500"
+              >Menu</a
+            >
+            <a
+              href="#contact"
+              class="text-gray-400 transition-colors duration-300 hover:text-yellow-500"
+              >Contact</a
+            >
+          </div>
+
+          <!-- Mobile Menu Toggle -->
+          <div class="flex items-center md:hidden">
+            <button
+              id="mobileMenuButton"
+              class="text-gray-400 hover:text-yellow-500 focus:outline-none"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
 
       <!-- Mobile Menu (Hidden by default) -->
-      <ul
-        id="mobile-menu"
-        class="lg:hidden hidden absolute left-0 right-0 top-16 bg-white shadow-md text-center py-4"
-      >
-        <li>
-          <a
-            href="#home"
-            class="block py-2 text-lg text-gray-800 hover:text-blue-600"
+      <div id="mobileMenu" class="hidden bg-gray-800 md:hidden">
+        <div class="px-6 py-4 space-y-4">
+          <a href="#home" class="block text-gray-400 hover:text-yellow-500"
             >Home</a
           >
-        </li>
-        <li>
-          <a
-            href="#about"
-            class="block py-2 text-lg text-gray-800 hover:text-blue-600"
-            >About</a
+          <a href="#about" class="block text-gray-400 hover:text-yellow-500"
+            >About Us</a
           >
-        </li>
-        <li>
-          <a
-            href="#services"
-            class="block py-2 text-lg text-gray-800 hover:text-blue-600"
+          <a href="#services" class="block text-gray-400 hover:text-yellow-500"
             >Services</a
           >
-        </li>
-        <li>
-          <a
-            href="#contact"
-            class="block py-2 text-lg text-gray-800 hover:text-blue-600"
+          <a href="#menu" class="block text-gray-400 hover:text-yellow-500"
+            >Menu</a
+          >
+          <a href="#contact" class="block text-gray-400 hover:text-yellow-500"
             >Contact</a
           >
-        </li>
-      </ul>
+        </div>
+      </div>
     </nav>
 
-    <!-- Main Content Section -->
-    <section
-      id="home"
-      class="text-center bg-cover bg-center h-screen flex flex-col justify-center items-center"
-      style="
-        background-image: url('https://images.unsplash.com/photo-1560684352-8497838a2229?auto=format&fit=crop&w=1512&q=80');
-      "
-    >
-      <h1 class="text-4xl sm:text-6xl text-white font-bold">
-        Welcome to Our Website
-      </h1>
-      <p class="text-lg sm:text-xl text-gray-300 mt-4">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      </p>
-      <button
-        class="mt-6 bg-yellow-500 text-black py-2 px-6 rounded-lg shadow-lg hover:bg-yellow-600"
-      >
-        Order Now
-      </button>
+    <script>
+      // Mobile menu toggle functionality
+      const mobileMenuButton = document.getElementById("mobileMenuButton");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+
+    <!-- Main Content -->
+    <section class="px-6 py-16 bg-gray-50">
+      <div class="container mx-auto text-center animate-fade-in">
+        <h1 class="mb-6 text-4xl font-bold text-gray-800 sm:text-5xl">
+          Delicious Meals Delivered to Your Doorstep
+        </h1>
+        <p class="mb-8 text-lg text-gray-600 sm:text-xl">
+          Experience the joy of tasty, fresh, and hygienically prepared meals
+          delivered right to your home. We bring the flavors of the world to
+          your table!
+        </p>
+        <a
+          href="#menu"
+          class="px-6 py-3 text-lg font-semibold text-white transition-all transform bg-green-500 rounded-lg shadow-md hover:bg-green-600 hover:scale-105"
+        >
+          Explore Our Menu
+        </a>
+      </div>
+      <div class="flex justify-center mt-12 animate-slide-in">
+        <img
+          src="https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Delicious Food"
+          class="w-full rounded-lg shadow-lg sm:w-3/4 md:w-1/2"
+        />
+      </div>
     </section>
 
-    <!-- Eye-catching Section (Promotional Banner) -->
-    <section class="bg-blue-500 text-white py-12 px-6 text-center">
-      <h2 class="text-3xl font-bold mb-4">Exclusive Offer!</h2>
-      <p class="text-lg mb-6">
-        Get 20% off your first order with us. Use code <strong>NEW20</strong> at
-        checkout!
-      </p>
-      <a
-        href="#order-now"
-        class="bg-yellow-500 text-black py-2 px-6 rounded-lg shadow-lg hover:bg-yellow-600"
+    <!-- eye catching  -->
+    <section
+      class="relative px-6 py-16 overflow-hidden text-white bg-gradient-to-r from-green-400 to-blue-500"
+    >
+      <div class="container mx-auto animate-zoom-in">
+        <h2 class="mb-6 text-3xl font-bold text-center sm:text-4xl">
+          The Best Food Delivery Service Around
+        </h2>
+        <p class="mb-12 text-lg text-center sm:text-xl">
+          With lightning-fast delivery, a variety of cuisines, and meals crafted
+          by top chefs, we are your go-to solution for every craving. Order now
+          and taste the difference!
+        </p>
+        <div class="flex justify-center">
+          <a
+            href="#order"
+            class="px-8 py-4 text-lg font-semibold text-green-500 transition-all transform bg-white rounded-full shadow-md hover:bg-gray-100 hover:scale-105"
+          >
+            Place Your Order Now
+          </a>
+        </div>
+      </div>
+
+      <!-- Decorative Elements with Motion -->
+      <div
+        class="absolute top-0 left-0 w-32 h-32 bg-white rounded-full opacity-20 blur-2xl animate-bounce-slow"
+      ></div>
+      <div
+        class="absolute bottom-0 right-0 w-40 h-40 bg-white rounded-full opacity-20 blur-3xl animate-bounce-slow"
+      ></div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="px-4 py-16 bg-white" id="why-choose-us">
+      <h2
+        class="mb-6 text-3xl font-bold text-center text-gray-800 sm:text-4xl md:text-5xl"
       >
-        Claim Your Discount
-      </a>
+        Why Choose Our Food Delivery Services?
+      </h2>
+      <p class="mb-12 text-lg text-center text-gray-600 sm:text-xl">
+        Here are some reasons why our customers love us. We focus on delivering
+        delicious meals, exceptional customer service, and a great experience
+        every time.
+      </p>
+
+      <!-- Reasons Cards Grid -->
+      <div class="flex flex-wrap justify-center gap-8">
+        <!-- Reason 1: Fresh & Healthy Meals -->
+        <div
+          class="w-full p-8 text-gray-800 transition duration-300 ease-in-out transform bg-white rounded-lg shadow-lg sm:w-1/2 md:w-1/3 hover:scale-105"
+        >
+          <div class="flex justify-center mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              class="w-16 h-16 text-green-500 animate-bounce"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 6v6l2 2"
+              />
+            </svg>
+          </div>
+          <h3 class="mb-4 text-xl font-semibold text-center">
+            Fresh & Healthy Meals
+          </h3>
+          <p class="text-base text-center">
+            We believe in delivering only the freshest and healthiest meals,
+            made from quality ingredients. Our meals are nutritious and perfect
+            for any time of the day.
+          </p>
+        </div>
+
+        <!-- Reason 2: Fast Delivery -->
+        <div
+          class="w-full p-8 text-gray-800 transition duration-300 ease-in-out transform bg-white rounded-lg shadow-lg sm:w-1/2 md:w-1/3 hover:scale-105"
+        >
+          <div class="flex justify-center mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              class="w-16 h-16 text-blue-500 animate-bounce"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 4V2m0 20v-2m0 0l-4-4m4 4l4-4"
+              />
+            </svg>
+          </div>
+          <h3 class="mb-4 text-xl font-semibold text-center">
+            Fast & Reliable Delivery
+          </h3>
+          <p class="text-base text-center">
+            Our delivery team works efficiently to ensure your meals arrive hot,
+            fresh, and on time. Enjoy quick delivery service that you can rely
+            on every time you order.
+          </p>
+        </div>
+
+        <!-- Reason 3: Variety of Cuisines -->
+        <div
+          class="w-full p-8 text-gray-800 transition duration-300 ease-in-out transform bg-white rounded-lg shadow-lg sm:w-1/2 md:w-1/3 hover:scale-105"
+        >
+          <div class="flex justify-center mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              class="w-16 h-16 text-orange-500 animate-bounce"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 4h16M4 6h16M4 8h16M4 10h16M4 12h16"
+              />
+            </svg>
+          </div>
+          <h3 class="mb-4 text-xl font-semibold text-center">
+            Wide Variety of Cuisines
+          </h3>
+          <p class="text-base text-center">
+            Craving something specific? We offer a wide variety of cuisines
+            including Italian, Indian, Chinese, and more. Whatever your taste,
+            we have something for everyone.
+          </p>
+        </div>
+
+        <!-- Reason 4: Customizable Orders -->
+        <div
+          class="w-full p-8 text-gray-800 transition duration-300 ease-in-out transform bg-white rounded-lg shadow-lg sm:w-1/2 md:w-1/3 hover:scale-105"
+        >
+          <div class="flex justify-center mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              class="w-16 h-16 text-purple-500 animate-bounce"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </div>
+          <h3 class="mb-4 text-xl font-semibold text-center">
+            Customizable Orders
+          </h3>
+          <p class="text-base text-center">
+            We offer flexible options so you can customize your orders according
+            to your dietary preferences, including vegetarian, vegan,
+            gluten-free, and more!
+          </p>
+        </div>
+
+        <!-- Reason 5: Affordable Pricing -->
+        <div
+          class="w-full p-8 text-gray-800 transition duration-300 ease-in-out transform bg-white rounded-lg shadow-lg sm:w-1/2 md:w-1/3 hover:scale-105"
+        >
+          <div class="flex justify-center mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              class="w-16 h-16 text-teal-500 animate-bounce"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 9l9 9 9-9"
+              />
+            </svg>
+          </div>
+          <h3 class="mb-4 text-xl font-semibold text-center">
+            Affordable Pricing
+          </h3>
+          <p class="text-base text-center">
+            We strive to offer affordable pricing on all our meals without
+            compromising on quality. Enjoy restaurant-style meals at
+            budget-friendly prices.
+          </p>
+        </div>
+
+        <!-- Reason 6: Exceptional Customer Service -->
+        <div
+          class="w-full p-8 text-gray-800 transition duration-300 ease-in-out transform bg-white rounded-lg shadow-lg sm:w-1/2 md:w-1/3 hover:scale-105"
+        >
+          <div class="flex justify-center mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              class="w-16 h-16 text-red-500 animate-bounce"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 8h2l2 12h8l2-12h2"
+              />
+            </svg>
+          </div>
+          <h3 class="mb-4 text-xl font-semibold text-center">
+            Exceptional Customer Service
+          </h3>
+          <p class="text-base text-center">
+            Our customer service team is always ready to assist you. Whether
+            it's helping you customize an order or answering any queries, we're
+            here for you!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- our promise section  -->
+
+    <section class="px-6 py-16 bg-white">
+      <div class="container mx-auto">
+        <h2
+          class="mb-8 text-3xl font-bold text-center text-gray-800 sm:text-4xl"
+        >
+          Our Promise to You
+        </h2>
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
+          <!-- Quality Food -->
+          <div class="flex flex-col items-center text-center">
+            <div
+              class="flex items-center justify-center w-20 h-20 mb-4 text-green-500 bg-green-100 rounded-full shadow-lg"
+            >
+              <svg
+                class="w-10 h-10"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12h.01M15 12h.01M12 12h.01M7.5 7.5l9 9m0-9l-9 9"
+                />
+              </svg>
+            </div>
+            <h3 class="mb-2 text-xl font-semibold text-gray-700">
+              Quality Food
+            </h3>
+            <p class="text-gray-600">
+              We use only the freshest and finest ingredients to prepare every
+              meal with love and care.
+            </p>
+          </div>
+
+          <!-- Sustainability -->
+          <div class="flex flex-col items-center text-center">
+            <div
+              class="flex items-center justify-center w-20 h-20 mb-4 text-blue-500 bg-blue-100 rounded-full shadow-lg"
+            >
+              <svg
+                class="w-10 h-10"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8v4l3 3m9-9a9 9 0 11-6.219-15.087M12 3.75V12h6.219"
+                />
+              </svg>
+            </div>
+            <h3 class="mb-2 text-xl font-semibold text-gray-700">
+              Sustainability
+            </h3>
+            <p class="text-gray-600">
+              Our eco-friendly practices ensure we minimize waste and care for
+              the environment.
+            </p>
+          </div>
+
+          <!-- Customer Satisfaction -->
+          <div class="flex flex-col items-center text-center">
+            <div
+              class="flex items-center justify-center w-20 h-20 mb-4 text-yellow-500 bg-yellow-100 rounded-full shadow-lg"
+            >
+              <svg
+                class="w-10 h-10"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 14v-4m0 0H9.879m2.121 0H14M7.879 8H10m-2.121 0H7m10 0h2m-4.121 0H17"
+                />
+              </svg>
+            </div>
+            <h3 class="mb-2 text-xl font-semibold text-gray-700">
+              Customer Satisfaction
+            </h3>
+            <p class="text-gray-600">
+              Your happiness is our top priority, and we strive to deliver a
+              seamless dining experience.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-16 bg-gray-100">
-      <div class="container mx-auto text-center">
-        <h2 class="text-3xl sm:text-4xl font-bold text-gray-800">
+    <!-- Online Food Services Section -->
+    <section class="px-4 py-16 bg-green-50" id="services">
+      <h2
+        class="mb-6 text-3xl font-bold text-center text-gray-800 sm:text-4xl md:text-5xl"
+      >
+        Our Online Food Services
+      </h2>
+      <p class="mb-12 text-lg text-center text-gray-600 sm:text-xl">
+        Discover the range of food delivery and catering services we offer to
+        bring delicious meals to your doorstep, anytime, anywhere.
+      </p>
+
+      <!-- Service Cards Grid -->
+      <div class="flex flex-wrap justify-center gap-8">
+        <!-- Service 1: Meal Delivery -->
+        <div
+          class="w-full p-8 text-gray-800 transition duration-300 ease-in-out transform bg-white rounded-lg shadow-lg sm:w-1/2 md:w-1/3 hover:scale-105"
+        >
+          <div class="flex justify-center mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              class="w-16 h-16 text-green-500 animate-bounce"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 13l4 4L19 7"
+              />
+            </svg>
+          </div>
+          <h3 class="mb-4 text-xl font-semibold text-center">Meal Delivery</h3>
+          <p class="text-base text-center">
+            Get your favorite meals delivered to your doorsteps within minutes.
+            Choose from a variety of cuisines and meal options for breakfast,
+            lunch, or dinner.
+          </p>
+        </div>
+
+        <!-- Service 2: Meal Plans -->
+        <div
+          class="w-full p-8 text-gray-800 transition duration-300 ease-in-out transform bg-white rounded-lg shadow-lg sm:w-1/2 md:w-1/3 hover:scale-105"
+        >
+          <div class="flex justify-center mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              class="w-16 h-16 text-green-500 animate-bounce"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 5h14v14H5z"
+              />
+            </svg>
+          </div>
+          <h3 class="mb-4 text-xl font-semibold text-center">Meal Plans</h3>
+          <p class="text-base text-center">
+            We offer customizable meal plans for individuals, families, and
+            businesses. Healthy, tasty, and nutritious meals delivered on time,
+            every time.
+          </p>
+        </div>
+
+        <!-- Service 3: Catering Services -->
+        <div
+          class="w-full p-8 text-gray-800 transition duration-300 ease-in-out transform bg-white rounded-lg shadow-lg sm:w-1/2 md:w-1/3 hover:scale-105"
+        >
+          <div class="flex justify-center mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              class="w-16 h-16 text-green-500 animate-bounce"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 5v14m7-7l-7 7-7-7"
+              />
+            </svg>
+          </div>
+          <h3 class="mb-4 text-xl font-semibold text-center">
+            Catering Services
+          </h3>
+          <p class="text-base text-center">
+            Our catering service brings delicious meals to your events, from
+            weddings to corporate functions. We offer a variety of packages to
+            suit every occasion.
+          </p>
+        </div>
+
+        <!-- Service 4: Online Ordering -->
+        <div
+          class="w-full p-8 text-gray-800 transition duration-300 ease-in-out transform bg-white rounded-lg shadow-lg sm:w-1/2 md:w-1/3 hover:scale-105"
+        >
+          <div class="flex justify-center mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              class="w-16 h-16 text-green-500 animate-bounce"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 5h18M3 7h18M3 9h18M3 11h18M3 13h18M3 15h18M3 17h18"
+              />
+            </svg>
+          </div>
+          <h3 class="mb-4 text-xl font-semibold text-center">
+            Online Ordering
+          </h3>
+          <p class="text-base text-center">
+            Order your favorite dishes online through our easy-to-use website or
+            app. Choose your meals and enjoy hassle-free delivery to your home
+            or office.
+          </p>
+        </div>
+
+        <!-- Service 5: Subscription Service -->
+        <div
+          class="w-full p-8 text-gray-800 transition duration-300 ease-in-out transform bg-white rounded-lg shadow-lg sm:w-1/2 md:w-1/3 hover:scale-105"
+        >
+          <div class="flex justify-center mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              class="w-16 h-16 text-green-500 animate-bounce"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"
+              />
+            </svg>
+          </div>
+          <h3 class="mb-4 text-xl font-semibold text-center">
+            Subscription Service
+          </h3>
+          <p class="text-base text-center">
+            Subscribe to our meal delivery service for weekly or monthly
+            packages. Enjoy delicious and fresh meals delivered on a regular
+            schedule at a discounted rate.
+          </p>
+        </div>
+
+        <!-- Service 6: Special Offers -->
+        <div
+          class="w-full p-8 text-gray-800 transition duration-300 ease-in-out transform bg-white rounded-lg shadow-lg sm:w-1/2 md:w-1/3 hover:scale-105"
+        >
+          <div class="flex justify-center mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              class="w-16 h-16 text-green-500 animate-bounce"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 9l3 3-3 3m4-3h8"
+              />
+            </svg>
+          </div>
+          <h3 class="mb-4 text-xl font-semibold text-center">Special Offers</h3>
+          <p class="text-base text-center">
+            Enjoy limited-time promotions and discounts on your favorite meals.
+            Keep an eye on our website for exciting new offers and deals!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 py-16 bg-gray-50">
+      <div class="container mx-auto">
+        <h2
+          class="mb-12 text-3xl font-bold text-center text-gray-800 sm:text-4xl"
+        >
           Our Services
         </h2>
-        <p class="text-lg text-gray-600 mt-4">
-          We offer a wide range of high-quality services tailored to your needs.
-        </p>
-      </div>
-
-      <div class="flex flex-wrap justify-center mt-12">
-        <!-- Service 1 -->
-        <div class="w-full sm:w-1/2 lg:w-1/3 p-6">
-          <div class="bg-white p-8 rounded-lg shadow-lg">
-            <img
-              src="https://via.placeholder.com/150"
-              alt="Service 1"
-              class="w-full h-48 object-cover rounded-t-lg"
-            />
-            <h3 class="text-xl font-semibold text-gray-800 mt-4">Service 1</h3>
-            <p class="text-gray-600 mt-2">
-              Description of service 1. Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit.
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
+          <!-- Fast Delivery -->
+          <div class="flex flex-col items-center text-center">
+            <div
+              class="flex items-center justify-center w-20 h-20 mb-4 text-red-500 bg-red-100 rounded-full shadow-lg animate-bounce"
+            >
+              <svg
+                class="w-10 h-10"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 10l4.553 1.18A2 2 0 0120 13.14V16a2 2 0 01-2 2H6a2 2 0 01-2-2v-2.86a2 2 0 01.447-1.96L9 10m6-5.5a4.5 4.5 0 00-9 0M7.5 10H16m-1 10h-4"
+                />
+              </svg>
+            </div>
+            <h3 class="mb-2 text-xl font-semibold text-gray-700">
+              Fast Delivery
+            </h3>
+            <p class="text-gray-600">
+              Get your meals delivered hot and fresh within 30 minutes or less.
             </p>
           </div>
-        </div>
 
-        <!-- Service 2 -->
-        <div class="w-full sm:w-1/2 lg:w-1/3 p-6">
-          <div class="bg-white p-8 rounded-lg shadow-lg">
-            <img
-              src="https://via.placeholder.com/150"
-              alt="Service 2"
-              class="w-full h-48 object-cover rounded-t-lg"
-            />
-            <h3 class="text-xl font-semibold text-gray-800 mt-4">Service 2</h3>
-            <p class="text-gray-600 mt-2">
-              Description of service 2. Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit.
+          <!-- Custom Orders -->
+          <div class="flex flex-col items-center text-center">
+            <div
+              class="flex items-center justify-center w-20 h-20 mb-4 text-purple-500 bg-purple-100 rounded-full shadow-lg animate-spin"
+            >
+              <svg
+                class="w-10 h-10"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 3v2m12-2v2M5 10h14M5 21h14m-5-7h4m-6 0H7"
+                />
+              </svg>
+            </div>
+            <h3 class="mb-2 text-xl font-semibold text-gray-700">
+              Custom Orders
+            </h3>
+            <p class="text-gray-600">
+              Customize your meals to suit your taste and dietary preferences.
             </p>
           </div>
-        </div>
 
-        <!-- Service 3 -->
-        <div class="w-full sm:w-1/2 lg:w-1/3 p-6">
-          <div class="bg-white p-8 rounded-lg shadow-lg">
-            <img
-              src="https://via.placeholder.com/150"
-              alt="Service 3"
-              class="w-full h-48 object-cover rounded-t-lg"
-            />
-            <h3 class="text-xl font-semibold text-gray-800 mt-4">Service 3</h3>
-            <p class="text-gray-600 mt-2">
-              Description of service 3. Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit.
+          <!-- Group Discounts -->
+          <div class="flex flex-col items-center text-center">
+            <div
+              class="flex items-center justify-center w-20 h-20 mb-4 text-green-500 bg-green-100 rounded-full shadow-lg animate-pulse"
+            >
+              <svg
+                class="w-10 h-10"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2l4-4M7.5 7.5h9M12 6v3m0 6h.01m6-3a9 9 0 11-6.219-8.987"
+                />
+              </svg>
+            </div>
+            <h3 class="mb-2 text-xl font-semibold text-gray-700">
+              Group Discounts
+            </h3>
+            <p class="text-gray-600">
+              Order for groups and enjoy exciting discounts on large orders.
+            </p>
+          </div>
+
+          <!-- Subscription Plans -->
+          <div class="flex flex-col items-center text-center">
+            <div
+              class="flex items-center justify-center w-20 h-20 mb-4 text-blue-500 bg-blue-100 rounded-full shadow-lg animate-bounce"
+            >
+              <svg
+                class="w-10 h-10"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 16h-1v-4h-1m2-4h.01m-6.935 9a9.004 9.004 0 0112.79-11.99M12 9v12m9-6h-6"
+                />
+              </svg>
+            </div>
+            <h3 class="mb-2 text-xl font-semibold text-gray-700">
+              Subscription Plans
+            </h3>
+            <p class="text-gray-600">
+              Save money with our weekly or monthly meal subscription plans.
+            </p>
+          </div>
+
+          <!-- Chef Specials -->
+          <div class="flex flex-col items-center text-center">
+            <div
+              class="flex items-center justify-center w-20 h-20 mb-4 text-yellow-500 bg-yellow-100 rounded-full shadow-lg animate-pulse"
+            >
+              <svg
+                class="w-10 h-10"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 12h12m-6-6h6m-3 12h6m-6 6h6m-6 0v-2m6-10a2 2 0 00-2-2m0 10a2 2 0 01-2 2"
+                />
+              </svg>
+            </div>
+            <h3 class="mb-2 text-xl font-semibold text-gray-700">
+              Chef Specials
+            </h3>
+            <p class="text-gray-600">
+              Try our chef-curated special dishes that change daily.
+            </p>
+          </div>
+
+          <!-- 24/7 Support -->
+          <div class="flex flex-col items-center text-center">
+            <div
+              class="flex items-center justify-center w-20 h-20 mb-4 text-teal-500 bg-teal-100 rounded-full shadow-lg animate-spin"
+            >
+              <svg
+                class="w-10 h-10"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M20 8v8M4 8v8m4-4h8M4 16l16-8m0 8L4 8"
+                />
+              </svg>
+            </div>
+            <h3 class="mb-2 text-xl font-semibold text-gray-700">
+              24/7 Support
+            </h3>
+            <p class="text-gray-600">
+              Reach out to us anytime for assistance with your orders.
             </p>
           </div>
         </div>
       </div>
     </section>
+    <!-- Explore Section  -->
+    <!-- <section class="px-6 py-16 bg-gray-50">
+      <div class="container mx-auto">
+        <h2
+          class="mb-12 text-3xl font-bold text-center text-gray-800 sm:text-4xl"
+        >
+          Explore More
+        </h2>
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-3"> -->
+    <!-- Food Blogs -->
+    <!-- <div
+            class="flex flex-col items-center p-6 text-center transition-shadow duration-300 bg-white rounded-lg shadow-lg hover:shadow-2xl"
+          >
+            <div class="relative w-20 h-20 mb-4">
+              <svg
+                class="w-full h-full text-red-500 animate-bounce"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 10h11M9 21V3m-6 6l6-6m6 18l6-6m-6 6V3"
+                />
+              </svg>
+            </div>
+            <img
+              src="https://via.placeholder.com/150"
+              alt="Food Blogs"
+              class="mb-4 rounded-lg"
+            />
+            <h3 class="mb-2 text-xl font-semibold text-gray-700">Food Blogs</h3>
+            <p class="text-gray-600">
+              Discover exciting recipes, cooking tips, and food stories from our
+              curated blogs.
+            </p>
+            <a href="#" class="mt-4 font-semibold text-red-500 hover:underline"
+              >Read More</a
+            >
+          </div> -->
+
+    <!-- Gift Cards -->
+    <!-- <div
+            class="flex flex-col items-center p-6 text-center transition-shadow duration-300 bg-white rounded-lg shadow-lg hover:shadow-2xl"
+          >
+            <div class="relative w-20 h-20 mb-4">
+              <svg
+                class="w-full h-full text-yellow-500 animate-spin"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 2a10 10 0 00-10 10h10V2zm0 0h10a10 10 0 00-10 10m10 0h-4v4m-6-6H6v-4M4 12h4v4"
+                />
+              </svg>
+            </div>
+            <img
+              src="https://via.placeholder.com/150"
+              alt="Gift Cards"
+              class="mb-4 rounded-lg"
+            />
+            <h3 class="mb-2 text-xl font-semibold text-gray-700">Gift Cards</h3>
+            <p class="text-gray-600">
+              Share the love of food with your friends and family through our
+              gift cards.
+            </p>
+            <a
+              href="#"
+              class="mt-4 font-semibold text-yellow-500 hover:underline"
+              >Learn More</a
+            >
+          </div> -->
+
+    <!-- Seasonal Offers -->
+    <!-- <div
+            class="flex flex-col items-center p-6 text-center transition-shadow duration-300 bg-white rounded-lg shadow-lg hover:shadow-2xl"
+          >
+            <div class="relative w-20 h-20 mb-4">
+              <svg
+                class="w-full h-full text-green-500 animate-pulse"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 16c.5 2 2 4 4 4s4-2 4-4m4-8c-.5-2-2-4-4-4s-4 2-4 4m-4 8h16M4 8h16"
+                />
+              </svg>
+            </div>
+            <img
+              src="https://via.placeholder.com/150"
+              alt="Seasonal Offers"
+              class="mb-4 rounded-lg"
+            />
+            <h3 class="mb-2 text-xl font-semibold text-gray-700">
+              Seasonal Offers
+            </h3>
+            <p class="text-gray-600">
+              Enjoy exclusive discounts and promotions during special seasons
+              and holidays.
+            </p>
+            <a
+              href="#"
+              class="mt-4 font-semibold text-green-500 hover:underline"
+              >Check Offers</a
+            >
+          </div>
+        </div>
+      </div>
+    </section> -->
 
     <!-- Contact Us Section -->
-    <section id="contact-us" class="py-12 px-4 sm:px-8 lg:px-32 bg-gray-100">
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl sm:text-4xl font-bold text-gray-800">Contact Us</h2>
-        <p class="mt-4 text-gray-600 text-sm sm:text-base">
-          We would love to hear from you! Whether you have a question, feedback,
-          or need assistance, reach out to us today.
-        </p>
-      </div>
+    <section class="px-6 py-16 bg-gray-50">
+      <div class="container mx-auto">
+        <h2
+          class="mb-8 text-3xl font-bold text-center text-gray-800 sm:text-4xl"
+        >
+          Contact Us
+        </h2>
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+          <!-- Contact Details -->
+          <div class="space-y-6">
+            <h3 class="text-2xl font-semibold text-gray-700">Get in Touch</h3>
+            <p class="text-gray-600">
+              We'd love to hear from you! Reach out to us for queries, support,
+              or feedback.
+            </p>
+            <div class="space-y-4">
+              <!-- Phone -->
+              <div class="flex items-center space-x-4">
+                <div class="text-blue-500">
+                  <svg
+                    class="w-6 h-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 10l9-9m0 0l9 9M4 11h16M4 11v7a2 2 0 002 2h12a2 2 0 002-2v-7"
+                    />
+                  </svg>
+                </div>
+                <p class="text-gray-700">+1 (234) 567-890</p>
+              </div>
+              <!-- Email -->
+              <div class="flex items-center space-x-4">
+                <div class="text-green-500">
+                  <svg
+                    class="w-6 h-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 8l9 6 9-6-9-6-9 6z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M21 8v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8"
+                    />
+                  </svg>
+                </div>
+                <p class="text-gray-700">contact@justlikeswiggy.com</p>
+              </div>
+              <!-- Address -->
+              <div class="flex items-center space-x-4">
+                <div class="text-red-500">
+                  <svg
+                    class="w-6 h-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 8l7-5 7 5v10a2 2 0 01-2 2H7a2 2 0 01-2-2V8z"
+                    />
+                  </svg>
+                </div>
+                <p class="text-gray-700">Mumbai,India</p>
+              </div>
+            </div>
+          </div>
 
-      <div class="max-w-3xl mx-auto mt-8 bg-white p-8 rounded-lg shadow-lg">
-        <form action="#" method="POST" class="space-y-6">
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            class="w-full px-4 py-3 border rounded-md text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            class="w-full px-4 py-3 border rounded-md text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            class="w-full px-4 py-3 border rounded-md text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          ></textarea>
-          <button
-            type="submit"
-            class="w-full bg-blue-500 text-white py-3 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            Send Message
-          </button>
-        </form>
+          <!-- Contact Form -->
+          <div class="p-8 bg-white rounded-lg shadow-lg">
+            <form>
+              <div class="mb-4">
+                <label for="name" class="block font-semibold text-gray-700"
+                  >Full Name</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  class="w-full px-4 py-2 mt-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="mb-4">
+                <label for="email" class="block font-semibold text-gray-700"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  class="w-full px-4 py-2 mt-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+              <div class="mb-4">
+                <label for="message" class="block font-semibold text-gray-700"
+                  >Message</label
+                >
+                <textarea
+                  id="message"
+                  rows="5"
+                  class="w-full px-4 py-2 mt-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                  placeholder="Your Message"
+                  required
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full px-4 py-3 font-semibold text-white transition bg-blue-500 rounded-lg hover:bg-blue-600"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Map Section -->
+        <div class="mt-16">
+          <h3 class="mb-6 text-2xl font-semibold text-center text-gray-700">
+            Find Us
+          </h3>
+          <div class="relative h-72 md:h-96">
+            <!-- <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509281!2d144.95744391533406!3d-37.81720997975179!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xfb86b6e9d5b81c3b!2sFood%20Court!5e0!3m2!1sen!2sus!4v1620181244972!5m2!1sen!2sus"
+              class="absolute inset-0 w-full h-full border-0 rounded-lg shadow-lg"
+              allowfullscreen=""
+              loading="lazy"
+            >
+            </iframe> -->
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d482633.0404990578!2d72.55150313096388!3d19.082606793034557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1734812145030!5m2!1sen!2sin"
+              class="absolute inset-0 w-full h-full border-0 rounded-lg shadow-lg"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
       </div>
     </section>
 
-    <footer class="bg-black text-white text-center py-4">
-      Copyright © 2024 JustLikeSwiggy.com. All Rights Reserved.
+    <footer class="py-12 text-gray-200 bg-gray-800">
+      <div class="container grid grid-cols-1 gap-8 px-6 mx-auto md:grid-cols-4">
+        <!-- About Us -->
+        <div>
+          <h3 class="mb-4 text-xl font-bold">About Us</h3>
+          <p class="text-gray-400">
+            We are committed to delivering the best online food services,
+            connecting people with their favorite cuisines effortlessly.
+            Experience freshness, taste, and quality with every order.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="mb-4 text-xl font-bold">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-white">Home</a></li>
+            <li><a href="#" class="hover:text-white">About</a></li>
+            <li><a href="#" class="hover:text-white">Services</a></li>
+            <li><a href="#" class="hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h3 class="mb-4 text-xl font-bold">Contact Us</h3>
+          <ul class="space-y-2">
+            <li class="flex items-center space-x-3">
+              <svg
+                class="w-5 h-5 text-blue-500"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 10l9-9m0 0l9 9M4 11h16M4 11v7a2 2 0 002 2h12a2 2 0 002-2v-7"
+                />
+              </svg>
+              <span>+1 (234) 567-890</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <svg
+                class="w-5 h-5 text-green-500"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 8l9 6 9-6-9-6-9 6z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 8v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8"
+                />
+              </svg>
+              <span>support@justlikeswiggy.com</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <svg
+                class="w-5 h-5 text-red-500"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 8l7-5 7 5v10a2 2 0 01-2 2H7a2 2 0 01-2-2V8z"
+                />
+              </svg>
+              <span>Mumbai, India</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <div>
+          <h3 class="mb-4 text-xl font-bold">Newsletter</h3>
+          <p class="mb-4 text-gray-400">
+            Subscribe to our newsletter for updates, promotions, and delicious
+            offers!
+          </p>
+          <form>
+            <div class="flex items-center">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                class="w-full px-4 py-2 text-gray-800 border border-gray-300 rounded-l-lg focus:ring-blue-500 focus:border-blue-500"
+                required
+              />
+              <button
+                type="submit"
+                class="px-4 py-2 text-white transition bg-blue-500 rounded-r-lg hover:bg-blue-600"
+              >
+                Subscribe
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bottom Section -->
+      <div class="pt-6 mt-12 text-center border-t border-gray-700">
+        <p>
+          &copy; <span id="currentYear"></span> Food Service. All rights
+          reserved.
+        </p>
+        <div class="flex justify-center mt-4 space-x-4">
+          <!-- Social Media Icons -->
+          <a href="#" class="text-gray-400 hover:text-white">
+            <!-- Social Icon 1 -->
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white">
+            <!-- Social Icon 2 -->
+          </a>
+        </div>
+      </div>
     </footer>
 
     <script>
@@ -244,6 +1262,9 @@
       menuToggle.addEventListener("click", () => {
         mobileMenu.classList.toggle("hidden");
       });
+      //  for dyamic year change
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
     </script>
   </body>
 </html>
